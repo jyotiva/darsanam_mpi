@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=yes">
+<title>MPI Darsana - Agama Hindu</title>
+<style>
+:root{--bg:#f6f0df;--ink:#24352b;--gold:#b4862c;--dark:#173b2c;--red:#8b3d32;--card:#fffaf0;--muted:#6d756e}
+*{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 20% 20%,#fff8e7 0 3px,transparent 4px),linear-gradient(135deg,#f7efd9,#e8e0c9);color:var(--ink);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(45deg,transparent 46%,#7c6a43 47%,#7c6a43 53%,transparent 54%),linear-gradient(-45deg,transparent 46%,#7c6a43 47%,#7c6a43 53%,transparent 54%);background-size:34px 34px}
+.app{max-width:1180px;margin:auto;min-height:100vh;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--dark);color:#fff;padding:14px 18px;border-radius:20px;position:sticky;top:10px;z-index:10;box-shadow:0 10px 30px #173b2c33}
+.brand{font-weight:800}.brand small{display:block;font-weight:400;opacity:.75}.nav{display:flex;flex-wrap:wrap;gap:7px}.nav button,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:0;border-radius:12px;padding:10px 13px;font-weight:700;cursor:pointer;background:#ffffff18;color:#fff}.nav button:hover,.nav .active{background:var(--gold)}
+main{padding:28px 0 70px}.page{display:none;animation:fade .3s}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{background:linear-gradient(135deg,var(--dark),#285641);color:#fff;border-radius:28px;padding:55px 42px;box-shadow:0 20px 50px #173b2c33}.hero h1{font-size:clamp(38px,7vw,76px);margin:0 0 10px}.hero p{font-size:20px;max-width:760px;line-height:1.6}.gold{color:#f0ca69}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.primary{background:var(--gold)!important;color:#fff!important}.secondary{background:#fff!important;color:var(--dark)!important}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:#fffaf0eF;border:1px solid #d9cda9;border-radius:20px;padding:22px;box-shadow:0 8px 25px #6d5c3820}.card h3{margin-top:0}.section-title{margin:0 0 8px;font-size:34px}.lead{color:var(--muted);line-height:1.65}.pill{display:inline-block;background:#ead9a9;color:#604a18;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800;margin-bottom:8px}
+.list{line-height:1.8}.compare{width:100%;border-collapse:collapse;background:#fffaf0;border-radius:16px;overflow:hidden}.compare th,.compare td{border:1px solid #d9cda9;padding:12px;text-align:left;vertical-align:top}.compare th{background:#e8d8a9}
+.callout{border-left:6px solid var(--gold);background:#fff7dc;padding:15px 18px;border-radius:12px;margin:15px 0}.subnav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.subnav button{border:1px solid #cdbd91;background:#fffaf0;border-radius:10px;padding:9px 12px;cursor:pointer}.subnav button.active{background:var(--dark);color:white}
+.mini{font-size:14px;color:var(--muted)}.progress{height:10px;background:#ddd3b8;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:var(--gold);transition:.3s}
+.option{display:block;border:2px solid #ddd3b8;background:#fffdf7;border-radius:14px;padding:13px;margin:9px 0;cursor:pointer}.option:hover{border-color:var(--gold)}.option input{margin-right:8px}.feedback{margin-top:15px;padding:14px;border-radius:13px;display:none}.correct{background:#dcefdc;border:1px solid #9bc79b}.wrong{background:#f6dddd;border:1px solid #d99b9b}
+.quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.quiz-actions button{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--dark);color:#fff}.score{font-size:48px;font-weight:900;color:var(--gold)}
+footer{text-align:center;color:#6b6c62;padding:20px}.ref a{color:#7a5a13}
+@media(max-width:700px){.top{position:relative;display:block}.nav{margin-top:12px}.hero{padding:34px 24px}.card{padding:18px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand">MPI DARSANA <small>Agama Hindu • Media Pembelajaran Interaktif</small></div>
+  <nav class="nav">
+    <button onclick="go('home')">Home</button><button onclick="go('petunjuk')">Petunjuk</button>
+    <button onclick="go('tujuan')">Tujuan</button><button onclick="go('materi')">Materi</button>
+    <button onclick="go('kuis')">Kuis</button><button onclick="go('refleksi')">Refleksi</button>
+    <button onclick="go('referensi')">Referensi</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <span class="pill">MULTIMEDIA PEMBELAJARAN INTERAKTIF</span>
+    <h1>Darsana</h1>
+    <p><b>Agama Hindu</b> — mengenal cara pandang filsafat India, enam Ṣaḍdarśana, konsep pengetahuan, serta penerapannya dalam kehidupan.</p>
+    <div class="actions">
+      <button class="btn primary" onclick="go('petunjuk')">Mulai Belajar →</button>
+      <button class="btn secondary" onclick="go('materi')">Langsung ke Materi</button>
+      <button class="btn secondary" onclick="go('kuis')">Coba Kuis</button>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:18px">
+    <div class="card"><span class="pill">01</span><h3>Pahami</h3><p>Pelajari pengertian dan latar belakang Darsana.</p></div>
+    <div class="card"><span class="pill">02</span><h3>Bandingkan</h3><p>Kenali enam Ṣaḍdarśana dan fokus pemikirannya.</p></div>
+    <div class="card"><span class="pill">03</span><h3>Evaluasi</h3><p>Kerjakan kuis dan lihat skor serta pembahasannya.</p></div>
+  </div>
+</section>
+
+<section id="petunjuk" class="page">
+<h2 class="section-title">Petunjuk Penggunaan</h2><p class="lead">MPI ini dirancang seperti presentasi pembelajaran yang dapat diklik. Gunakan menu di atas untuk berpindah bagian.</p>
+<div class="grid">
+<div class="card"><h3>🖱 Navigasi</h3><p>Klik <b>Home, Tujuan, Materi, Kuis, Refleksi</b>, atau <b>Referensi</b>. Tombol pada kartu materi juga dapat digunakan untuk membuka submateri.</p></div>
+<div class="card"><h3>📚 Belajar</h3><p>Baca materi secara berurutan. Gunakan tabel perbandingan sebagai ringkasan sebelum mengerjakan kuis.</p></div>
+<div class="card"><h3>📝 Kuis</h3><p>Pilih satu jawaban untuk setiap soal. Setelah menjawab, klik <b>Periksa Jawaban</b> untuk mendapatkan umpan balik.</p></div>
+<div class="card"><h3>🎯 Target</h3><p>Usahakan memahami alasan di balik setiap jawaban, bukan sekadar menghafal istilah.</p></div>
+</div>
+</section>
+
+<section id="tujuan" class="page">
+<h2 class="section-title">Tujuan Pembelajaran</h2>
+<div class="card">
+<p>Setelah mempelajari MPI ini, peserta didik diharapkan mampu:</p>
+<ol class="list">
+<li>Menjelaskan pengertian umum Darsana sebagai pandangan atau cara melihat kebenaran.</li>
+<li>Menjelaskan perbedaan kelompok <i>āstika</i> dan <i>nāstika</i> secara umum dalam konteks filsafat India.</li>
+<li>Menyebutkan enam sistem Ṣaḍdarśana yang berkembang dalam tradisi Hindu.</li>
+<li>Mengidentifikasi ciri pokok Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, dan Vedanta.</li>
+<li>Menjelaskan beberapa konsep penting seperti pramana, Purusha, Prakriti, tiga guna, moksha, dan kaivalya.</li>
+<li>Menghubungkan nilai-nilai Darsana dengan sikap belajar, berpikir kritis, disiplin, dan pengendalian diri.</li>
+</ol>
+</div>
+</section>
+
+<section id="materi" class="page">
+<h2 class="section-title">Materi Darsana</h2>
+<p class="lead">Klik submateri berikut untuk membuka pembahasan.</p>
+<div class="subnav">
+<button class="active" onclick="sub('pengertian',this)">Pengertian</button>
+<button onclick="sub('astika',this)">Āstika & Nāstika</button>
+<button onclick="sub('enam',this)">Enam Ṣaḍdarśana</button>
+<button onclick="sub('pramana',this)">Pramana</button>
+<button onclick="sub('kehidupan',this)">Penerapan</button>
+<button onclick="sub('ringkasan',this)">Rangkuman</button>
+</div>
+
+<div id="pengertian" class="subpage">
+<div class="card"><span class="pill">SUBMATERI 1</span><h3>Apa Itu Darsana?</h3>
+<p>Istilah <i>darśana</i> berasal dari akar bahasa Sanskerta yang berkaitan dengan “melihat” atau “memandang”. Dalam konteks filsafat India, Darsana dipahami sebagai suatu <b>pandangan, cara melihat, atau sistem pemikiran mengenai kebenaran dan realitas</b>.</p>
+<p>Darsana tidak hanya membahas teori. Pembahasannya dapat mencakup hakikat manusia, dunia, pengetahuan, sebab-akibat, etika, pembebasan, dan hubungan antara individu dengan realitas tertinggi.</p>
+<div class="callout"><b>Inti:</b> Darsana membantu manusia menggunakan penalaran dan pengalaman untuk memahami realitas serta mencari jalan menuju kehidupan yang lebih baik dan pembebasan.</div>
+<h3>Mengapa Darsana dipelajari?</h3><ul class="list"><li>Melatih berpikir kritis dan sistematis.</li><li>Memahami beragam cara pandang terhadap realitas.</li><li>Mengkaji hubungan pengetahuan, tindakan, dan pembebasan.</li><li>Menumbuhkan sikap reflektif terhadap kehidupan.</li></ul>
+</div></div>
+
+<div id="astika" class="subpage" style="display:none">
+<div class="card"><span class="pill">SUBMATERI 2</span><h3>Āstika dan Nāstika</h3>
+<p>Dalam pembahasan filsafat India, istilah <i>āstika</i> dan <i>nāstika</i> memiliki makna teknis. Salah satu pembeda yang umum digunakan berkaitan dengan penerimaan terhadap otoritas Weda.</p>
+<div class="grid"><div class="card"><h3>Āstika</h3><p>Secara umum merujuk pada sistem yang menerima otoritas Weda. Enam Ṣaḍdarśana yang dibahas dalam materi ini termasuk kelompok āstika.</p></div>
+<div class="card"><h3>Nāstika</h3><p>Secara umum merujuk pada sistem yang tidak menerima otoritas Weda dalam pengertian tersebut. Contoh yang sering dibahas dalam sejarah filsafat India antara lain Buddhisme, Jainisme, dan Cārvāka.</p></div></div>
+<div class="callout"><b>Catatan:</b> Istilah āstika–nāstika dalam filsafat India tidak selalu identik dengan “percaya Tuhan” dan “tidak percaya Tuhan”. Maknanya bergantung pada konteks filsafat yang sedang dibahas.</div>
+</div></div>
+
+<div id="enam" class="subpage" style="display:none">
+<div class="card"><span class="pill">SUBMATERI 3</span><h3>Enam Ṣaḍdarśana</h3>
+<table class="compare"><tr><th>Darśana</th><th>Fokus Utama</th><th>Konsep Kunci</th></tr>
+<tr><td><b>Nyaya</b></td><td>Logika, penalaran, dan metode memperoleh pengetahuan yang benar.</td><td>Pramana, inferensi, debat/penalaran.</td></tr>
+<tr><td><b>Vaisheshika</b></td><td>Analisis realitas dan kategori-kategori keberadaan.</td><td>Padartha, atomisme, substansi.</td></tr>
+<tr><td><b>Samkhya</b></td><td>Analisis dualitas kesadaran dan materi.</td><td>Purusha, Prakriti, tiga guna.</td></tr>
+<tr><td><b>Yoga</b></td><td>Latihan pengendalian pikiran dan disiplin spiritual.</td><td>Astanga Yoga, samadhi, kaivalya.</td></tr>
+<tr><td><b>Mimamsa</b></td><td>Penafsiran Weda dan pelaksanaan dharma/ritual.</td><td>Dharma, Weda, tindakan.</td></tr>
+<tr><td><b>Vedanta</b></td><td>Pembahasan hakikat Brahman, Atman, dunia, dan pembebasan.</td><td>Brahman, Atman, moksha.</td></tr></table>
+</div>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>1. Nyaya</h3><p>Menekankan logika dan penalaran yang tepat. Nyaya membahas bagaimana manusia dapat memperoleh pengetahuan yang benar melalui sarana pengetahuan (<i>pramana</i>), termasuk persepsi dan inferensi.</p></div>
+<div class="card"><h3>2. Vaisheshika</h3><p>Menganalisis realitas melalui kategori-kategori keberadaan (<i>padartha</i>). Tradisi ini terkenal dengan pembahasan tentang substansi dan unsur penyusun realitas.</p></div>
+<div class="card"><h3>3. Samkhya</h3><p>Menganalisis realitas melalui dua prinsip utama: <b>Purusha</b> sebagai kesadaran dan <b>Prakriti</b> sebagai alam/materi. Prakriti berhubungan dengan tiga guna: sattva, rajas, dan tamas.</p></div>
+<div class="card"><h3>4. Yoga</h3><p>Menekankan praktik disiplin untuk mengendalikan aktivitas pikiran. Salah satu kerangka terkenal adalah <b>Astanga Yoga</b>: yama, niyama, asana, pranayama, pratyahara, dharana, dhyana, samadhi.</p></div>
+<div class="card"><h3>5. Mimamsa</h3><p>Memberi perhatian besar pada penafsiran Weda, kewajiban (<i>dharma</i>), dan tindakan yang tepat. Tradisi ini sangat penting dalam pengembangan pemikiran tentang ritual dan penafsiran teks.</p></div>
+<div class="card"><h3>6. Vedanta</h3><p>Berpusat pada kajian Upanishad, Brahma Sutra, dan Bhagavad Gita serta pertanyaan tentang Brahman, Atman, dunia, dan moksha. Vedanta memiliki beberapa aliran dengan penafsiran berbeda.</p></div>
+</div>
+</div>
+
+<div id="pramana" class="subpage" style="display:none">
+<div class="card"><span class="pill">SUBMATERI 4</span><h3>Pramana: Sarana Pengetahuan</h3>
+<p><i>Pramana</i> adalah sarana atau cara memperoleh pengetahuan yang dianggap benar. Jenis pramana dapat berbeda menurut sistem filsafat. Dalam pembahasan Nyaya, misalnya, dikenal beberapa sarana pengetahuan seperti:</p>
+<div class="grid"><div class="card"><h3>Pratyaksha</h3><p>Pengetahuan melalui persepsi/pengamatan langsung.</p></div><div class="card"><h3>Anumana</h3><p>Pengetahuan melalui inferensi atau penalaran dari tanda/bukti.</p></div><div class="card"><h3>Upamana</h3><p>Pengetahuan melalui perbandingan atau analogi.</p></div><div class="card"><h3>Shabda</h3><p>Pengetahuan yang diperoleh dari kesaksian/pernyataan yang dapat dipercaya.</p></div></div>
+<div class="callout"><b>Contoh sederhana:</b> Melihat asap di kejauhan lalu menyimpulkan adanya api merupakan contoh pola penalaran inferensial.</div>
+</div></div>
+
+<div id="kehidupan" class="subpage" style="display:none">
+<div class="card"><span class="pill">SUBMATERI 5</span><h3>Darsana dalam Kehidupan Sehari-hari</h3>
+<p>Nilai dari mempelajari Darsana dapat diterapkan tanpa harus menjadikan setiap aktivitas sebagai pembahasan filsafat. Beberapa sikap yang dapat dikembangkan:</p>
+<div class="grid"><div class="card"><h3>Berpikir kritis</h3><p>Memeriksa alasan dan bukti sebelum menerima suatu kesimpulan.</p></div><div class="card"><h3>Disiplin</h3><p>Melatih kebiasaan baik dan konsisten dalam belajar maupun beraktivitas.</p></div><div class="card"><h3>Pengendalian diri</h3><p>Menyadari emosi dan dorongan sebelum bertindak.</p></div><div class="card"><h3>Refleksi</h3><p>Mengevaluasi tindakan dan mempertimbangkan akibatnya.</p></div></div>
+</div></div>
+
+<div id="ringkasan" class="subpage" style="display:none">
+<div class="card"><span class="pill">SUBMATERI 6</span><h3>Rangkuman Cepat</h3>
+<ul class="list"><li><b>Darsana</b> berarti pandangan/cara melihat kebenaran dan realitas dalam tradisi filsafat India.</li><li><b>Ṣaḍdarśana</b> terdiri dari Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, dan Vedanta.</li><li><b>Nyaya</b> menonjolkan logika dan pengetahuan yang benar.</li><li><b>Vaisheshika</b> menganalisis kategori-kategori keberadaan.</li><li><b>Samkhya</b> membahas Purusha dan Prakriti serta tiga guna.</li><li><b>Yoga</b> menekankan disiplin dan pengendalian pikiran menuju pembebasan.</li><li><b>Mimamsa</b> berfokus pada penafsiran Weda dan dharma/tindakan.</li><li><b>Vedanta</b> membahas Brahman, Atman, dunia, dan moksha.</li><li><b>Pramana</b> adalah sarana memperoleh pengetahuan yang benar.</li></ul>
+</div></div>
+</section>
+
+<section id="kuis" class="page">
+<h2 class="section-title">Kuis Interaktif</h2><p class="lead">10 soal pilihan ganda. Jawab satu per satu dan baca pembahasannya setelah memeriksa jawaban.</p>
+<div class="card">
+<div style="display:flex;justify-content:space-between"><b id="qnum">Soal 1 dari 10</b><span id="qscore">Skor: 0</span></div>
+<div class="progress" style="margin:10px 0 22px"><div id="qbar" class="bar"></div></div>
+<h3 id="qtext"></h3><div id="opts"></div><div id="feedback" class="feedback"></div>
+<div class="quiz-actions"><button onclick="prevQ()">← Sebelumnya</button><button id="checkBtn" onclick="checkQ()">Periksa Jawaban</button><button id="nextBtn" onclick="nextQ()" style="display:none">Berikutnya →</button></div>
+</div>
+<div id="result" class="card" style="display:none;margin-top:16px;text-align:center"><div class="score" id="finalScore"></div><h2 id="resultTitle"></h2><p id="resultText"></p><button class="quiz-actions" style="display:inline-block" onclick="restartQuiz()">Ulangi Kuis</button></div>
+</section>
+
+<section id="refleksi" class="page">
+<h2 class="section-title">Refleksi</h2><p class="lead">Gunakan pertanyaan ini untuk mengecek pemahamanmu setelah belajar.</p>
+<div class="grid"><div class="card"><h3>1</h3><p>Apa arti Darsana menurut pemahamanmu sendiri?</p></div><div class="card"><h3>2</h3><p>Darśana mana yang paling menarik bagimu? Jelaskan alasannya.</p></div><div class="card"><h3>3</h3><p>Bagaimana berpikir kritis dapat diterapkan dalam kehidupan sehari-hari?</p></div><div class="card"><h3>4</h3><p>Nilai apa dari pembelajaran Darsana yang ingin kamu praktikkan?</p></div></div>
+<div class="card" style="margin-top:16px"><label><b>Catatan refleksi pribadi</b></label><textarea id="reflection" style="width:100%;min-height:150px;margin-top:10px;border:1px solid #d5c9a7;border-radius:12px;padding:12px;font:inherit" placeholder="Tulis refleksimu di sini..."></textarea><br><button class="btn" style="background:var(--dark);margin-top:10px" onclick="saveReflection()">Simpan di perangkat</button><span id="saveMsg" class="mini"></span></div>
+</section>
+
+<section id="referensi" class="page">
+<h2 class="section-title">Referensi</h2>
+<div class="card ref">
+<ul class="list">
+<li>Materi pembelajaran dan literatur pengantar Filsafat India/Darsana.</li>
+<li>Rujukan umum tradisi Hindu mengenai Ṣaḍdarśana, Weda, Upanishad, Bhagavad Gita, dan konsep moksha.</li>
+<li>Kemendikdasmen — contoh pengembangan pembelajaran digital/interaktif dan pemanfaatan teknologi pembelajaran.</li>
+</ul>
+<div class="callout">Untuk tugas sekolah, tambahkan nama buku/modul yang benar-benar digunakan oleh guru atau sekolah pada bagian ini agar daftar pustaka sesuai sumber yang kamu pakai.</div>
+</div>
+<div class="card" style="margin-top:16px"><h3>Identitas Pengembang</h3><p><b>Nama:</b> ______________________________</p><p><b>Kelas:</b> ______________________________</p><p><b>Sekolah:</b> ____________________________</p></div>
+</section>
+</main>
+<footer>MPI Darsana • Agama Hindu • HTML5 interaktif</footer>
+</div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+function go(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));window.scrollTo(0,0);}
+function sub(id,btn){document.querySelectorAll('.subpage').forEach(x=>x.style.display=x.id===id?'block':'none');document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');}
+
+const questions=[
+{q:"Apa makna umum istilah Darsana dalam tradisi filsafat India?",o:["Kitab suci tertentu","Pandangan atau cara melihat kebenaran","Nama upacara keagamaan","Nama tempat suci"],a:1,e:"Darśana berkaitan dengan melihat/memandang dan digunakan untuk menunjuk pandangan atau sistem filsafat mengenai realitas dan kebenaran."},
+{q:"Manakah yang termasuk enam Ṣaḍdarśana?",o:["Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, Vedanta","Buddhisme, Jainisme, Cārvāka, Yoga, Vedanta, Nyaya","Weda, Upanishad, Purana, Itihasa, Tantra, Agama","Karma, Bhakti, Jnana, Raja, Hatha, Mantra"],a:0,e:"Enam Ṣaḍdarśana yang umum dibahas ialah Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, dan Vedanta."},
+{q:"Darśana yang sangat menekankan logika dan penalaran adalah...",o:["Yoga","Mimamsa","Nyaya","Vedanta"],a:2,e:"Nyaya terkenal dengan kajian logika, penalaran, dan sarana memperoleh pengetahuan yang benar."},
+{q:"Dalam Samkhya, Purusha dan Prakriti secara umum dipahami sebagai...",o:["Dua jenis ritual","Kesadaran dan alam/materi","Dua kitab suci","Dua tahap upacara"],a:1,e:"Samkhya membedakan Purusha sebagai prinsip kesadaran dan Prakriti sebagai prinsip alam/materi."},
+{q:"Manakah yang merupakan tiga guna dalam Samkhya?",o:["Dharma, artha, kama","Sattva, rajas, tamas","Yama, niyama, asana","Jnana, bhakti, karma"],a:1,e:"Tiga guna adalah sattva, rajas, dan tamas."},
+{q:"Manakah yang termasuk Astanga Yoga?",o:["Yama dan niyama","Brahman dan Atman","Pratyaksha dan anumana","Padartha dan atom"],a:0,e:"Astanga Yoga mencakup yama, niyama, asana, pranayama, pratyahara, dharana, dhyana, dan samadhi."},
+{q:"Mimamsa banyak memberikan perhatian pada...",o:["Penafsiran Weda dan dharma/tindakan","Teori atom modern","Astronomi Barat","Seni pertunjukan"],a:0,e:"Mimamsa sangat terkait dengan penafsiran Weda, dharma, dan pelaksanaan tindakan/ritual yang tepat."},
+{q:"Vedanta banyak membahas hubungan dan hakikat...",o:["Brahman, Atman, dunia, dan moksha","Atom, elektron, dan proton","Gunung, sungai, dan laut","Hanya logika formal"],a:0,e:"Vedanta membahas persoalan metafisika dan pembebasan, termasuk Brahman, Atman, dunia, dan moksha."},
+{q:"Pramana dapat dipahami sebagai...",o:["Sarana memperoleh pengetahuan yang benar","Nama latihan pernapasan","Jenis upacara","Nama kitab"],a:0,e:"Pramana berarti sarana atau cara memperoleh pengetahuan yang dianggap benar."},
+{q:"Sikap yang paling sesuai dengan pembelajaran Darsana adalah...",o:["Menerima semua informasi tanpa memeriksa alasan","Menghindari pertanyaan kritis","Membiasakan berpikir kritis dan reflektif","Tidak perlu mengevaluasi tindakan"],a:2,e:"Pembelajaran Darsana dapat membantu mengembangkan penalaran, refleksi, dan kemampuan melihat suatu persoalan dari sudut pandang yang sistematis."}
+];
+let qi=0, answers=Array(questions.length).fill(null), checked=Array(questions.length).fill(false);
+function renderQ(){let x=questions[qi];document.getElementById('qnum').textContent=`Soal ${qi+1} dari ${questions.length}`;document.getElementById('qbar').style.width=((qi+1)/questions.length*100)+'%';document.getElementById('qtext').textContent=x.q;document.getElementById('qscore').textContent='Skor: '+answers.filter((v,i)=>v===questions[i].a).length;document.getElementById('opts').innerHTML=x.o.map((o,i)=>`<label class="option"><input type="radio" name="q" value="${i}" ${answers[qi]===i?'checked':''}>${String.fromCharCode(65+i)}. ${o}</label>`).join('');let f=document.getElementById('feedback');f.style.display=checked[qi]?'block':'none';if(checked[qi]){let ok=answers[qi]===x.a;f.className='feedback '+(ok?'correct':'wrong');f.innerHTML=(ok?'✅ <b>Benar!</b> ':'❌ <b>Belum tepat.</b> ')+x.e;}document.getElementById('checkBtn').style.display=checked[qi]?'none':'inline-block';document.getElementById('nextBtn').style.display=checked[qi]?'inline-block':'none';}
+function checkQ(){let s=document.querySelector('input[name=q]:checked');if(!s){alert('Pilih salah satu jawaban terlebih dahulu.');return}answers[qi]=Number(s.value);checked[qi]=true;renderQ();if(qi===questions.length-1){document.getElementById('nextBtn').textContent='Lihat Hasil';}}
+function nextQ(){if(qi<questions.length-1){qi++;renderQ();}else showResult();}
+function prevQ(){if(qi>0){qi--;renderQ();}}
+function showResult(){let score=answers.filter((v,i)=>v===questions[i].a).length;let pct=score*10;document.getElementById('result').style.display='block';document.getElementById('finalScore').textContent=pct+' / 100';document.getElementById('resultTitle').textContent=pct>=80?'Sangat baik!':pct>=60?'Cukup baik, lanjutkan belajar!':'Yuk, pelajari materi lagi lalu coba ulangi!';document.getElementById('resultText').textContent=`Kamu menjawab ${score} dari ${questions.length} soal dengan benar.`;document.getElementById('result').scrollIntoView();}
+function restartQuiz(){qi=0;answers=Array(questions.length).fill(null);checked=Array(questions.length).fill(false);document.getElementById('result').style.display='none';renderQ();go('kuis');}
+function saveReflection(){
+      const value=document.getElementById('reflection').value;
+      try{localStorage.setItem('darsanaReflection',value);document.getElementById('saveMsg').textContent=' ✓ Tersimpan di perangkat ini.'}
+      catch(e){document.getElementById('saveMsg').textContent=' ✓ Catatan aktif selama halaman ini terbuka (penyimpanan permanen dibatasi browser).'}
+    }
+document.addEventListener('change',e=>{if(e.target.name==='q'&&!checked[qi])answers[qi]=Number(e.target.value)});
+try{document.getElementById('reflection').value=localStorage.getItem('darsanaReflection')||'';}catch(e){document.getElementById('reflection').value='';}
+renderQ();
+</script>
+</body>
+</html>
